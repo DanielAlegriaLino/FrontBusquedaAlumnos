@@ -1,0 +1,17 @@
+.navbar{
+  background-color: #343a40;
+}
+
+.register{
+  transition: transform.2s;
+}
+
+.register:hover{
+  transform: scale(1.02);
+  cursor: pointer;
+  background-color: rgb(240, 240, 240);
+}
+
+.nav-link:hover{
+  cursor: pointer;
+}
