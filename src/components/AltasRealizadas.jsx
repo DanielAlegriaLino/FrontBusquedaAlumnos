@@ -50,19 +50,19 @@ export default function AltasRealizadas(){
         <section className="text-center">
             <h1 className="header-title text-primary pt-4 pb-3">Altas Realizadas</h1>
         </section>
-        <main className="px-5 mx-5">
-            <section className="input-group d-flex justify-content-center my-3" style={{width:"40%", margin:'0 auto'}}>
-                <select onChange={handleSelectChange} defaultValue={0} className="form-select">
+        <main className="container">
+            <section className="input-group my-3 search-section">
+                <select onChange={handleSelectChange} defaultValue={0} className="form-select form-control">
                     <option value={0}>Expediente</option>
                     <option value={1}>Nombre</option>
                 </select>
                 <input onChange={(event)=>setBusqueda(event.target.value)} value={busqueda} type="search" className="form-control" id="search-student"/>
                 <button onClick={search} type="button" className="btn btn-outline-primary" id="search-btn">Buscar</button>
             </section>
-            <section className="container text-center mt-5" style={{width:"70%", margin:'0 auto'}}>
+            <section className="container text-center mt-5 registers" style={{margin:'0 auto'}}>
                 <article className="row row-cols-3 border-bottom border-secondary">
                     <p className="col fw-bold mb-1">Expediente</p>
-                    <p className="col fw-bold mb-1">Nombre del Alumno</p>
+                    <p className="col fw-bold mb-1">Nombre</p>
                     <p className="col fw-bold mb-1">Semestre</p>
                 </article>
                 {alumnos && !searched && alumnos.map((alumno, index) => (
