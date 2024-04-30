@@ -11,16 +11,13 @@ export default function Alumno(){
     useEffect(() => {
         try{
             const url = `http://127.0.0.1:8000/alumnos/info/${id}`;
-            console.log(url);
             axios.get(url)
             .then(res => {
                 setData(res.data)
-                console.log(res)
             })
             axios.get(semesterURL)
             .then(res => {
                 setSemData(res.data)
-                console.log(res)
             })
         }catch(error){
             setSemData(false)
@@ -83,6 +80,7 @@ export default function Alumno(){
                                         <p className="col margin-0"><a target="_blank" href={semesterData["Evidencia_de_confirmación_de_materias"]}>Evidencia</a></p>
                                     </div>
                                 </section>
+                                {/* <img src="https://drive.google.com/file/d/1GyI6CjgDSeCRvsHmhKZWoABE-3p38ClV/preview" width="80%" height="300" style={{margin:'0 auto'}}/> */}
                                 <iframe className="mt-2" src="https://drive.google.com/file/d/1GyI6CjgDSeCRvsHmhKZWoABE-3p38ClV/preview" width="80%" height="300" style={{margin:'0 auto'}}></iframe>
                             </>
                         )}
