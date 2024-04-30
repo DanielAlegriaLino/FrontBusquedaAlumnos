@@ -58,34 +58,32 @@ export default function Alumno(){
             { studentData && <>
                 <div className="container">
                     <div className="row text-center gy-2">
-                        <div className="col"><h2 className="student-name fs-4 pt-2 pb-4">{studentData['Nombre_completo']}</h2></div>
+                        <div className="col"><h2 className="student-name fs-4 pt-2 pb-3">{studentData['Nombre_completo']}</h2></div>
                     </div>
-                    <div className="row justify-content-around">
-                        <div className="col"></div>
-                        <div className="col-3"><h3 className="data text-muted fs-5 student-id">Expediente: {studentData['Expediente']}</h3></div>
-                        <div className="col-3"><h3 className="data text-muted fs-5 student-semester">Semestre: {studentData['Semestre']}</h3></div>
-                        <div className="col-3"><h3 className="data text-muted fs-5 student-status">Reinscrito: Si</h3></div>
-                        <div className="col"></div>
+                    <div className="row justify-content-around student-data text-center ">
+                        <div className="col-lg-4"><h3 className="data text-muted fs-5 student-id"><b>Expediente:</b> {studentData['Expediente']}</h3></div>
+                        <div className="col-lg-4"><h3 className="data text-muted fs-5 student-semester"><b>Semestre:</b> {studentData['Semestre']}</h3></div>
+                        <div className="col-lg-4"><h3 className="data text-muted fs-5 student-status"><b>Reinscrito:</b> Si</h3></div>
                     </div>
                 </div>
-                <main>
-                    <section className="semester-tabs mt-3 d-flex justify-content-center">
+                <main className="container justify-content-center">
+                    <nav className="navbar navbar-expand-lg bg-white semester-tabs mt-3 d-flex justify-content-around">
                         <ul className="nav nav-tabs">
                             {createTabs()}
                         </ul>
-                    </section>
+                    </nav>
                     <section className="tab-content d-flex justify-content-center flex-column mt-4">
                         {semesterData && (
                             <>
-                                <section className="d-flex justify-content-center">
-                                    <div className="tab-pane d-flex justify-content-between" id="tab-info" style={{width:'55%'}}>
-                                        <p className="margin-0"><b>Confirmación: </b>Si</p>
-                                        <p className="margin-0"><b>Fecha: </b>{semesterData["Marca_temporal"]}</p>
-                                        <p className="margin-0"><b>Correo: </b>{semesterData['Dirección_de_correo_electrónico']}</p>
-                                        <p className="margin-0"><a target="_blank" href={semesterData["Evidencia_de_confirmación_de_materias"]}>Evidencia</a></p>
+                                <section className="container">
+                                    <div className="row row-cols-lg-4 tab-pane d-flex justify-content-center " id="tab-info">
+                                        <p className="col margin-0"><b>Confirmación: </b>Si</p>
+                                        <p className="col margin-0"><b>Fecha: </b>{semesterData["Marca_temporal"]}</p>
+                                        <p className="col margin-0"><b>Correo: </b>{semesterData['Dirección_de_correo_electrónico']}</p>
+                                        <p className="col margin-0"><a target="_blank" href={semesterData["Evidencia_de_confirmación_de_materias"]}>Evidencia</a></p>
                                     </div>
                                 </section>
-                                <iframe className="mt-2" src="https://drive.google.com/file/d/1GyI6CjgDSeCRvsHmhKZWoABE-3p38ClV/preview" width="600" height="300" style={{margin:'0 auto'}}></iframe>
+                                <iframe className="mt-2" src="https://drive.google.com/file/d/1GyI6CjgDSeCRvsHmhKZWoABE-3p38ClV/preview" width="80%" height="300" style={{margin:'0 auto'}}></iframe>
                             </>
                         )}
                         {!semesterData && (

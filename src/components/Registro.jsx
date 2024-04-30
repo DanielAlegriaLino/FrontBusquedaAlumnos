@@ -11,7 +11,7 @@ export default function Registro(props){
         navigate(`/alumno`)
     }
 
-    return <article onClick={handleClick} className="register row text-center border border-secondary rounded my-3">
+    return <article onClick={handleClick} className="register row text-center border border-secondary rounded my-3 align-items-center">
         <p className="col mb-0 py-3">{props.expediente}</p>
         <p className="col mb-0 py-3">{props.nombre}</p>
         <p className="col mb-0 py-3">Semestre {props.semestre}</p>
