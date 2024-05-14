@@ -10,9 +10,17 @@ export default function AgregarRegistros(){
 
     function sendData(event){
         event.preventDefault();
-        axios.post('http://localhost:8000/data/', {file})
+
+        const formData = new FormData();
+        formData.append("file", file);
+
+        axios.post('http://localhost:8000/data/', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+        })
         .then(res => {
-            res.data ? navigate('/') : setError(true)
+            res.data.message ? navigate('/') : setError(true)
         })
     }
 
